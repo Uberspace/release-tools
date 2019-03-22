@@ -1,0 +1,4 @@
+tasks:
+  search_root: /usr/local/share/invoke
+run:
+    echo: true

@@ -1,0 +1,12 @@
+[user]
+	name = DevTools
+	email = brutus.dmc@googlemail.com
+
+[alias]
+	ignore = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
+
+[url "https://github.com/"]
+	insteadOf = gh:
+
+[url "https://bitbucket.org/"]
+	insteadOf = bb:
