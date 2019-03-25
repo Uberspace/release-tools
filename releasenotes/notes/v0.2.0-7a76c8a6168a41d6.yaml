@@ -1,6 +1,5 @@
 ---
-updated:
-  - ⬆️ install *dulwich* from *master zipball*, to include PR for *git-submodule* fix.
+summary: We reach *MVP* state 🎉 - still a new *reno* release would be nice.
 fixed:
   - ✏️ fixed some typos in the release notes for ``0.1.0``.
 issues:
