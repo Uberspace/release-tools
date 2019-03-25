@@ -2,6 +2,42 @@
 CHANGELOG
 =========
 
+.. _CHANGELOG_v0.2.0:
+
+v0.2.0
+======
+
+.. _CHANGELOG_v0.2.0_Summary:
+
+Summary
+-------
+
+We reach *MVP* state 🎉 - still a new *reno* release would be nice.
+
+.. _CHANGELOG_v0.2.0_Added Features:
+
+Added Features
+--------------
+
+- 👷 🐳 Add ``.gitlab-ci.yaml`` to build the Docker image from *master*.
+
+
+.. _CHANGELOG_v0.2.0_Fixes:
+
+Fixes
+-----
+
+- ✏️ fixed some typos in the release notes for ``0.1.0``.
+
+
+.. _CHANGELOG_v0.2.0_Known Issues:
+
+Known Issues
+------------
+
+- 📌 Use a *reno* version that comes with a *dulwich* version that fixes the *git-submodule* issue (probably ``0.19.12``).
+
+
 .. _CHANGELOG_v0.1.1:
 
 v0.1.1
@@ -28,7 +64,7 @@ Fixes
 Known Issues
 ------------
 
-- 📌 Use a *reno* version that comes with a *dulwich* version that fixes the *git-submodule* issue (probably ``0.19.11``).
+- 📌 Use a *reno* version that comes with a *dulwich* version that fixes the *git-submodule* issue (probably ``0.19.12``).
 
 
 .. _CHANGELOG_v0.1.0:
