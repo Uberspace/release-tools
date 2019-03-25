@@ -1,0 +1,5 @@
+---
+fixed:
+  - ✏️ fixed some typos in the release notes for ``0.1.0``.
+issues:
+  - 📌 Use a *reno* version that comes with a *dulwich* version that fixes the *git-submodule* issue (probably ``0.19.11``).
