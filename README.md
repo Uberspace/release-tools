@@ -1,6 +1,6 @@
 # Release Tools
 
-**VERSION**: `0.1.0`
+**VERSION**: `0.1.1`
 
 This is a [Python Docker Image][], that comes with `git` and some other tools
 installed, that can help with release related tasks:
