@@ -3,3 +3,4 @@ reno==2.11.2
 invoke==1.2.0
 cookiecutter==1.6.0
 safety==1.8.5
+git+https://github.com/dulwich/dulwich.git@master#egg=dulwich

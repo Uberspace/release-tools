@@ -1,4 +1,6 @@
 ---
+updated:
+  - ⬆️ install *dulwich* from *master zipball*, to include PR for *git-submodule* fix.
 fixed:
   - ✏️ fixed some typos in the release notes for ``0.1.0``.
 issues:
