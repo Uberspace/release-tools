@@ -1,0 +1,3 @@
+---
+fixed:
+  - 🙈 Added `.keep` file to the `releasenotes/notes/` directory of the *Reno* cookie, to prevent `git` from ignoring it.
