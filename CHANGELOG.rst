@@ -2,6 +2,39 @@
 CHANGELOG
 =========
 
+.. _CHANGELOG_v0.3.0:
+
+v0.3.0
+======
+
+.. _CHANGELOG_v0.3.0_Added Features:
+
+Added Features
+--------------
+
+- ✨ New task to *lint release notes*.
+
+- ✨ New task to *list IDs* for git ignore files.
+
+- 🔧 Basic ``.editorconfig`` file (4 spaces).
+
+
+.. _CHANGELOG_v0.3.0_Changes:
+
+Changes
+-------
+
+- 🚨 Lint before release.
+
+
+.. _CHANGELOG_v0.3.0_Fixes:
+
+Fixes
+-----
+
+- 🙈 Added `.keep` file to the `releasenotes/notes/` directory of the *Reno* cookie, to prevent `git` from ignoring it.
+
+
 .. _CHANGELOG_v0.2.0:
 
 v0.2.0
