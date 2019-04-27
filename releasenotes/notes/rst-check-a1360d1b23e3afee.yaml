@@ -1,3 +1,4 @@
 ---
 added:
-  - New task to *list IDs* for git ignore files.
+  - ✨ New task to *list IDs* for git ignore files.
+  - 🔧 Basic ``.editorconfig`` file (4 spaces).
