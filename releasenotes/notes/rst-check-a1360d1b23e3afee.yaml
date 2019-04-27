@@ -3,3 +3,5 @@ added:
   - ✨ New task to *lint release notes*.
   - ✨ New task to *list IDs* for git ignore files.
   - 🔧 Basic ``.editorconfig`` file (4 spaces).
+changed:
+  - 🚨 Lint before release.

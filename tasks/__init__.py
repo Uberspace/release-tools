@@ -16,6 +16,7 @@ def release(ctx, part=None):
     tag = ctx.git.tag.format(version=new_version)
     msg = ctx.git.message.format(tag=tag)
 
+    notes.lint(ctx)
     ctx.run(f"git tag '{tag}'")
     notes.write(ctx)
     ctx.run(f"git tag -d '{tag}'")
@@ -28,29 +29,23 @@ def release(ctx, part=None):
 
 ns = invoke.Collection()
 
-ns.configure({
-    "paths": {
-        "base": pathlib.Path(__file__).parent,
-        "cwd": pathlib.Path.cwd(),
-    },
-    "audit": {
-        "req_file": "requirements.txt",
-    },
-    "git": {
-        "tag": "v{version}",
-        "message": ":memo: update CHANGELOG for {tag} #0",
-    },
-    "notes": {
-        "config_file": pathlib.Path.cwd() / "releasenotes" / "config.yaml",
-        "title": "CHANGELOG",
-        "output": "CHANGELOG.rst",
-    },
-    "version": {
-        "config_file": pathlib.Path.cwd() / ".bumpversion.cfg",
-        "parts": ("major", "minor", "patch"),
-        "default_part": "patch",
-    },
-})
+ns.configure(
+    {
+        "paths": {"base": pathlib.Path(__file__).parent, "cwd": pathlib.Path.cwd()},
+        "audit": {"req_file": "requirements.txt"},
+        "git": {"tag": "v{version}", "message": ":memo: update CHANGELOG for {tag} #0"},
+        "notes": {
+            "config_file": pathlib.Path.cwd() / "releasenotes" / "config.yaml",
+            "title": "CHANGELOG",
+            "output": "CHANGELOG.rst",
+        },
+        "version": {
+            "config_file": pathlib.Path.cwd() / ".bumpversion.cfg",
+            "parts": ("major", "minor", "patch"),
+            "default_part": "patch",
+        },
+    }
+)
 
 ns.add_collection(audit.ns_audit)
 ns.add_collection(git.ns_git)
