@@ -28,6 +28,7 @@ If you run this image, it presents you a list of [Invoke] tasks:
   audit.packages              Print compromised installed packages.
   audit.requirements          Print compromised packages in req-file.
   git.ignore (git)            Print `.gitignore` for `--ids`.
+  git.list                    Print list of available IDs.
   notes.list (notes)          Print list of release note files.
   notes.new                   Create new release note.
   notes.preview               Print preview of change log.
@@ -54,19 +55,19 @@ docker run --rm --entrypoint reno release-tools --help
 
 If you're ready to release a new version, please…
 
-1.  ensure a clean repo (everything merged, release notes ready…),
+1. ensure a clean repo (everything merged, release notes ready…),
 
-2.  run the `release` task, to create the _CHANGELOG_, _bump the version_
-    and tag the commits:
+2. run the `release` task, to create the _CHANGELOG_, _bump the version_
+   and tag the commits:
 
-	```shell
-	docker run --rm \
-		-v "$(pwd)":/usr/local/src \
-		--user "--user $(id -u):$(id -g)" \
-		release-tools release
-	```
+   ```shell
+   docker run --rm \
+       -v "$(pwd)":/usr/local/src \
+       --user "--user $(id -u):$(id -g)" \
+       release-tools release
+   ```
 
-3.  and run `git push` and `git push --tags`.
+3. and run `git push` and `git push --tags`.
 
 ## :rocket: Deployment
 
