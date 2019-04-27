@@ -17,6 +17,13 @@ def list_notes(ctx):
     ctx.run(cmd)
 
 
+@invoke.task
+def lint(ctx):
+    """ Check release notes for RST errors. """
+    cmd = "reno lint"
+    ctx.run(cmd)
+
+
 @invoke.task(
     iterable=["version"],
     help={"version": "limit output to this version (can be given multiple times)"},
@@ -34,6 +41,7 @@ def preview(ctx, title=None, version=None):
 @invoke.task(
     iterable=["version"],
     help={"version": "limit output to this version (can be given multiple times)"},
+    pre=[lint],
 )
 def write(ctx, title=None, output=None, version=None):
     """ Write change log to file. """
@@ -50,5 +58,6 @@ ns_notes = invoke.Collection("notes")
 
 ns_notes.add_task(list_notes, "list", default=True)
 ns_notes.add_task(new)
+ns_notes.add_task(lint)
 ns_notes.add_task(preview)
 ns_notes.add_task(write)

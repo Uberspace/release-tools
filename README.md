@@ -29,6 +29,7 @@ If you run this image, it presents you a list of [Invoke] tasks:
   audit.requirements          Print compromised packages in req-file.
   git.ignore (git)            Print `.gitignore` for `--ids`.
   git.list                    Print list of available IDs.
+  notes.lint                  Check release notes for RST errors.
   notes.list (notes)          Print list of release note files.
   notes.new                   Create new release note.
   notes.preview               Print preview of change log.
