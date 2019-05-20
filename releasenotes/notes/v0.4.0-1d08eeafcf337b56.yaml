@@ -1,0 +1,9 @@
+---
+added:
+  - '🔊 Log versions in Gitlab CI.'
+  - '📦 Added *Pipfile* - to update requirements more easily (``pipenv run pip freeze > requirements.txt``).'
+updated:
+  - '⬆️  Updated required packages.'
+  - '📝 Added a section on workflow to the Readme.'
+removed:
+  - '🔒 Removed task to audit virtual env.'
