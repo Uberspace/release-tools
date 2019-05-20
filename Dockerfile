@@ -2,16 +2,19 @@ ARG PYTHON_VERSION=3
 FROM python:$PYTHON_VERSION
 
 # update image
-RUN apt update && apt upgrade -y
-
-# setup git
-RUN apt install git
-COPY configs/gitconfig /etc/gitconfig
+RUN set -ex \
+    && apt-get update \
+    && apt-get upgrade --yes \
+    && apt-get install --yes --no-install-recommends \
+        git
 
 # install tools
 WORKDIR /tmp
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
+
+# setup git
+COPY configs/gitconfig /etc/gitconfig
 
 # setup cookiecutter
 ENV COOKIECUTTER_CONFIG=/etc/cookiecutter.yaml
