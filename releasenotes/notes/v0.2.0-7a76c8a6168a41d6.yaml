@@ -1,8 +1,4 @@
 ---
-summary: We reach *MVP* state 🎉 - still a new *reno* release would be nice.
+summary: We reach *MVP* state 🎉 - still a new *reno* release would be nice (until now there's no ``0.19.12`` version released, so we keep using *master* from now on).
 added:
   - 👷 🐳 Add ``.gitlab-ci.yaml`` to build the Docker image from *master*.
-fixed:
-  - ✏️ fixed some typos in the release notes for ``0.1.0``.
-issues:
-  - 📌 Use a *reno* version that comes with a *dulwich* version that fixes the *git-submodule* issue (probably ``0.19.12``).
