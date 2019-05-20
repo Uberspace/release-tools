@@ -2,6 +2,39 @@
 CHANGELOG
 =========
 
+.. _CHANGELOG_v0.3.1:
+
+v0.3.1
+======
+
+.. _CHANGELOG_v0.3.1_Added Features:
+
+Added Features
+--------------
+
+- 🔊 Log versions in Gitlab CI.
+
+- 📦 Added *Pipfile* - to update requirements more easily (``pipenv run pip freeze > requirements.txt``).
+
+
+.. _CHANGELOG_v0.3.1_Updates:
+
+Updates
+-------
+
+- ⬆️  Updated required packages.
+
+- 📝 Added a section on workflow to the Readme.
+
+
+.. _CHANGELOG_v0.3.1_Removed:
+
+Removed
+-------
+
+- 🔒 Removed task to audit virtual env.
+
+
 .. _CHANGELOG_v0.3.0:
 
 v0.3.0
@@ -45,7 +78,7 @@ v0.2.0
 Summary
 -------
 
-We reach *MVP* state 🎉 - still a new *reno* release would be nice.
+We reach *MVP* state 🎉 - still a new *reno* release would be nice (until now there's no ``0.19.12`` version released, so we keep using *master* from now on).
 
 .. _CHANGELOG_v0.2.0_Added Features:
 
@@ -53,22 +86,6 @@ Added Features
 --------------
 
 - 👷 🐳 Add ``.gitlab-ci.yaml`` to build the Docker image from *master*.
-
-
-.. _CHANGELOG_v0.2.0_Fixes:
-
-Fixes
------
-
-- ✏️ fixed some typos in the release notes for ``0.1.0``.
-
-
-.. _CHANGELOG_v0.2.0_Known Issues:
-
-Known Issues
-------------
-
-- 📌 Use a *reno* version that comes with a *dulwich* version that fixes the *git-submodule* issue (probably ``0.19.12``).
 
 
 .. _CHANGELOG_v0.1.1:
@@ -82,14 +99,6 @@ Updates
 -------
 
 - ⬆️ install *dulwich* from *master zipball*, to include PR for *git-submodule* fix.
-
-
-.. _CHANGELOG_v0.1.1_Fixes:
-
-Fixes
------
-
-- ✏️ fixed some typos in the release notes for ``0.1.0``.
 
 
 .. _CHANGELOG_v0.1.1_Known Issues:
