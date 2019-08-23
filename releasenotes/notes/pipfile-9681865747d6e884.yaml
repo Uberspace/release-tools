@@ -1,0 +1,3 @@
+---
+removed:
+  - "`Pipenv <https://docs.pipenv.org/>`_ support."
