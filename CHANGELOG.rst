@@ -2,12 +2,12 @@
 CHANGELOG
 =========
 
-.. _CHANGELOG_v0.4.0:
+.. _CHANGELOG_v0.4.1:
 
-v0.4.0
+v0.4.1
 ======
 
-.. _CHANGELOG_v0.4.0_Summary:
+.. _CHANGELOG_v0.4.1_Summary:
 
 Summary
 -------
@@ -15,7 +15,7 @@ Summary
 This image is now on `Docker Hub <https://hub.docker.com/r/uberspace/release-tools>`_ as ``uberspace/release-tools``.
 
 
-.. _CHANGELOG_v0.4.0_Changes:
+.. _CHANGELOG_v0.4.1_Changes:
 
 Changes
 -------
@@ -25,7 +25,7 @@ Changes
 - 📦 The internal GitLab version now only mirrors the GitHub repo.
 
 
-.. _CHANGELOG_v0.4.0_Updates:
+.. _CHANGELOG_v0.4.1_Updates:
 
 Updates
 -------
@@ -35,10 +35,12 @@ Updates
 - ⬆️ Updated *dulwich* to ``0.19.13``.
 
 
-.. _CHANGELOG_v0.4.0_Fixes:
+.. _CHANGELOG_v0.4.1_Fixes:
 
 Fixes
 -----
+
+- 🚀 Add workaround for recent GitLab docker services - see this `Issue <https://cdn.knightlab.com/>`_ for more.
 
 - 📌 Updated *dulwich* to a version, that fixes the *git-submodule* issue.
 
