@@ -1,0 +1,6 @@
+---
+updated:
+  - ⬆️ Updated *reno* to ``2.11.3``.
+  - ⬆️ Updated *dulwich* to ``0.19.13``.
+fixed:
+  - 📌 Updated *dulwich* to a version, that fixes the *git-submodule* issue.
