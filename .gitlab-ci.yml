@@ -1,6 +1,6 @@
 ---
 variables:
-  PYTHON_VERSION: '${PYTHON_VERSION:-3}'
+  PYTHON_VERSION: "${PYTHON_VERSION:-3}"
 
 deploy-image:
   stage: deploy
@@ -10,11 +10,11 @@ deploy-image:
   services:
     - docker:dind
   variables:
-    DOCKER_HOST: tcp://docker:2375/
     DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
     IMAGE_VERSION: $CI_REGISTRY_IMAGE:latest
   before_script:
-    - 'docker info'
+    - "docker info"
     - 'docker login -u gitlab-ci-token -p "$CI_JOB_TOKEN" "$CI_REGISTRY"'
   script:
     - 'echo "PYTHON .: $PYTHON_VERSION"'
