@@ -11,6 +11,8 @@ installed, that can help with release related tasks:
 -   [reno]
 -   [safety]
 
+It's available on [Docker Hub][] as `uberspace/release-tools`.
+
 ## 🚸 Usage
 
 The default is to run as the _user_ `root` from `/usr/local/src/` as _working
@@ -26,7 +28,7 @@ You can create the following _alias_ for running this image:
 alias dkr-release="docker run --rm \
     --volume "$(pwd)":/usr/local/src \
     --user "$(id -u):$(id -g)" \
-    release-tools"
+    uberspace/release-tools"
 ```
 
 ### Tools
@@ -34,7 +36,7 @@ alias dkr-release="docker run --rm \
 You can use the installed tools directly, by setting them as _entry points_:
 
 ```shell
-docker run --rm --entrypoint reno release-tools --help
+docker run --rm --entrypoint reno uberspace/release-tools --help
 ```
 
 ### Tasks
@@ -89,24 +91,25 @@ If you're ready to release a new version, please…
     docker run --rm \
         --volume "$(pwd)":/usr/local/src \
         --user "$(id -u):$(id -g)" \
-        release-tools release
+        uberspace/release-tools release
     ```
 
 3. and run `git push` and `git push --tags`.
 
 ## 🚀 Deployment
 
-The _Gitlab CI_ builds new images from pushes to the _master_ branch.
+Pushes to _master_ trigger builds on [Docker Hub].
 
 Change `requirements.txt` to control the installed software (and versions) and
-set the `PYTHON_VERSION` environment variable (in the settings for the _CI_) to
-set the Docker tag used for the Python base image.
+set the `PYTHON_VERSION` environment variable, to set the Docker tag used for
+the Python base image.
 
 **NOTE** We use `3` as default tag for now (instead of `3-alpine`), because the
 _dulwich_ compilation bails on _Alpine_.
 
 [bumpversion]: https://github.com/c4urself/bump2version
 [cookie-cutter]: https://pypi.org/project/cookiecutter/
+[docker hub]: https://cloud.docker.com/u/uberspace/repository/docker/uberspace/docker-machine
 [invoke]: https://pypi.org/project/invoke/
 [python docker image]: https://hub.docker.com/_/python
 [reno]: https://pypi.org/project/reno/
