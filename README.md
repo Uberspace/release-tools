@@ -109,7 +109,7 @@ _dulwich_ compilation bails on _Alpine_.
 
 [bumpversion]: https://github.com/c4urself/bump2version
 [cookie-cutter]: https://pypi.org/project/cookiecutter/
-[docker hub]: https://cloud.docker.com/u/uberspace/repository/docker/uberspace/docker-machine
+[docker hub]: https://hub.docker.com/r/uberspace/release-tools
 [invoke]: https://pypi.org/project/invoke/
 [python docker image]: https://hub.docker.com/_/python
 [reno]: https://pypi.org/project/reno/
