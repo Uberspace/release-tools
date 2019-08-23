@@ -98,7 +98,7 @@ If you're ready to release a new version, please…
 
 ## 🚀 Deployment
 
-Pushes to _master_ trigger builds on [Docker Hub].
+Pushes to _master_ trigger builds on [Docker Hub][].
 
 Change `requirements.txt` to control the installed software (and versions) and
 set the `PYTHON_VERSION` environment variable, to set the Docker tag used for
