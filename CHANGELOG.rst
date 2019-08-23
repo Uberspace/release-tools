@@ -2,6 +2,19 @@
 CHANGELOG
 =========
 
+.. _CHANGELOG_v0.4.1:
+
+v0.4.1
+======
+
+.. _CHANGELOG_v0.4.1_Fixes:
+
+Fixes
+-----
+
+- 🚀 Add workaround for recent GitLab docker services - see this `Issue <https://cdn.knightlab.com/>`_ for more.
+
+
 .. _CHANGELOG_v0.4.0:
 
 v0.4.0
