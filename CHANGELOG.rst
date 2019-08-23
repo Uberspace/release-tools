@@ -2,6 +2,55 @@
 CHANGELOG
 =========
 
+.. _CHANGELOG_v0.4.0:
+
+v0.4.0
+======
+
+.. _CHANGELOG_v0.4.0_Summary:
+
+Summary
+-------
+
+This image is now on `Docker Hub <https://hub.docker.com/r/uberspace/release-tools>`_ as ``uberspace/release-tools``.
+
+
+.. _CHANGELOG_v0.4.0_Changes:
+
+Changes
+-------
+
+- 📦 Moved the repo on GitHub from ``brutus/release-tools`` to ``uberspace/release-tools``.
+
+- 📦 The internal GitLab version now only mirrors the GitHub repo.
+
+
+.. _CHANGELOG_v0.4.0_Updates:
+
+Updates
+-------
+
+- ⬆️ Updated *reno* to ``2.11.3``.
+
+- ⬆️ Updated *dulwich* to ``0.19.13``.
+
+
+.. _CHANGELOG_v0.4.0_Removed:
+
+Removed
+-------
+
+- `Pipenv <https://docs.pipenv.org/>`_ support.
+
+
+.. _CHANGELOG_v0.4.0_Fixes:
+
+Fixes
+-----
+
+- 📌 Updated *dulwich* to a version, that fixes the *git-submodule* issue.
+
+
 .. _CHANGELOG_v0.3.1:
 
 v0.3.1
