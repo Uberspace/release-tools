@@ -34,4 +34,4 @@ ENV XDG_CACHE_HOME=$HOME/.cache
 ENV XDG_RUNTIME_DIR=$HOME/.run
 WORKDIR /usr/local/src
 ENTRYPOINT [ "/usr/local/bin/invoke"]
-CMD ["--list"]
+CMD ["--list", "--list-format", "nested"]

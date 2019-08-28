@@ -1,5 +1,7 @@
 ---
 added:
   - "✨ Added `pre-commit <https://pre-commit.com/>`_ to list of installed tools."
+changed:
+  - "🎨 Show the list of available task as nested list (if the container is run with no argumnents)."
 updated:
   - "📦 Updated requirements."
