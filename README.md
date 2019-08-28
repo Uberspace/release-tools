@@ -45,21 +45,26 @@ docker run --rm --entrypoint reno uberspace/release-tools --help
 If you run this image (e.g. with the alias above), it presents you a list of
 [Invoke] tasks:
 
-    release                      Write CHANGELOG and BUMP version.
-    audit.requirements (audit)   Print compromised packages in req-file.
-    git.ignore (git)             Print `.gitignore` for `--ids`.
-    git.list                     Print list of available IDs.
-    notes.lint                   Check release notes for RST errors.
-    notes.list (notes)           Print list of release note files.
-    notes.new                    Create new release note.
-    notes.preview                Print preview of change log.
-    notes.write                  Write change log to file.
-    setup.all (setup)            Setup version & release notes management.
-    setup.notes                  Create `releasenotes` tree in current directory.
-    setup.version                Create `.bumpversion.cfg` in current directory.
-    version.bump                 Bump version based on `--part`.
-    version.current (version)    Print current version.
-    version.next                 Print next version based on `--part`.
+    release              Write CHANGELOG and BUMP version.
+    audit
+        .requirements*   Print compromised packages in req-file.
+    git
+        .ignore          Print `.gitignore` for `--ids`.
+        .list*           Print list of available IDs.
+    notes
+        .lint            Check release notes for RST errors.
+        .list*           Print list of release note files.
+        .new             Create new release note.
+        .preview         Print preview of change log.
+        .write           Write change log to file.
+    setup
+        .all*            Setup version & release notes management.
+        .notes           Create `releasenotes` tree in current directory.
+        .version         Create `.bumpversion.cfg` in current directory.
+    version
+        .bump            Bump version based on `--part`.
+        .current*        Print current version.
+        .next            Print next version based on `--part`.
 
 The _command arguments_ given to `docker run …` are passed to `invoke` - e.g. to
 run lint your release notes, you can run `dkr-release notes.lint`.
