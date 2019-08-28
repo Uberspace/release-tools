@@ -1,7 +1,10 @@
 ---
 added:
   - "✨ Added `pre-commit <https://pre-commit.com/>`_ to list of installed tools."
+  - "🎨 Added ``--latest`` switch to ``notes.preview`` to only show unreleased release notes."
 changed:
-  - "🎨 Show the list of available task as nested list (if the container is run with no argumnents)."
+  - "🎨 Made commiting of change log and version bump configurable."
+  - "🎨 We now list the available task as nested list (if the container is run with no arguments)."
+  - "🎨 We now hide *stderr* output for the ``notes.…`` tasks."
 updated:
   - "📦 Updated requirements."

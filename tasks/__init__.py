@@ -1,3 +1,4 @@
+import os
 import pathlib
 
 import invoke
@@ -9,43 +10,51 @@ from . import setup
 from . import version
 
 
-@invoke.task
-def release(ctx, part=None):
+@invoke.task(help={"part": "version part to bump ('major', 'minor' or 'patch')"})
+def release(ctx, part=None, commit=None):
     """ Write CHANGELOG and BUMP version. """
-    new_version = version.get_next(ctx, part)
-    tag = ctx.git.tag.format(version=new_version)
-    msg = ctx.git.message.format(tag=tag)
+    if commit is None:
+        commit_notes = ctx.config.notes.commit
+        commit_version = ctx.config.version.commit
+    else:
+        commit_notes = commit
+        commit_version = commit
 
+    # lint notes
     notes.lint(ctx)
-    ctx.run(f"git tag '{tag}'")
-    notes.write(ctx)
-    ctx.run(f"git tag -d '{tag}'")
 
-    ctx.run(f"git add '{ctx.notes.output}'")
-    ctx.run(f"git commit -m '{msg}'")
+    # get version info
+    ctx.config.current_version = version.get_current(ctx)
+    ctx.config.new_version = version.get_next(ctx, part)
+    ctx.config.tag = ctx.config.git.tag_name.format(**ctx.config)
 
+    # write change log
+    try:
+        ctx.run(f"git tag '{ctx.config.tag}'")
+        notes.write(ctx)
+    finally:
+        ctx.run(f"git tag -d '{ctx.config.tag}'")
+
+    # commit change log
+    if commit_notes:
+        msg = ctx.config.git.message.notes.format(**ctx.config)
+        ctx.run(f"git add '{ctx.config.notes.changelog_file}'")
+        ctx.run(f"git commit --no-verify -m '{msg}'")
+
+    # bump version
     version.bump(ctx, part)
+
+    # commit version bump
+    if commit_version:
+        msg = ctx.config.git.message.version.format(**ctx.config)
+        ctx.run(f"git add -u")
+        ctx.run(f"git commit --no-verify -m '{msg}'")
+
+    # tag
+    ctx.run(f"git tag '{ctx.config.tag}'")
 
 
 ns = invoke.Collection()
-
-ns.configure(
-    {
-        "paths": {"base": pathlib.Path(__file__).parent, "cwd": pathlib.Path.cwd()},
-        "audit": {"req_file": "requirements.txt"},
-        "git": {"tag": "v{version}", "message": ":memo: update CHANGELOG for {tag} #0"},
-        "notes": {
-            "config_file": pathlib.Path.cwd() / "releasenotes" / "config.yaml",
-            "title": "CHANGELOG",
-            "output": "CHANGELOG.rst",
-        },
-        "version": {
-            "config_file": pathlib.Path.cwd() / ".bumpversion.cfg",
-            "parts": ("major", "minor", "patch"),
-            "default_part": "patch",
-        },
-    }
-)
 
 ns.add_collection(audit.ns_audit)
 ns.add_collection(git.ns_git)
@@ -54,3 +63,33 @@ ns.add_collection(setup.ns_setup)
 ns.add_collection(version.ns_version)
 
 ns.add_task(release)
+
+ns.configure(
+    {
+        "paths": {"base": pathlib.Path(__file__).parent, "cwd": pathlib.Path.cwd()},
+        "audit": {
+            "req_file": "requirements.txt",
+            "args": [],
+        },
+        "git": {
+            "tag_name": "v{new_version}",
+            "message": {
+                "notes": ":memo: update CHANGELOG for {new_version} #0",
+                "version": ":bookmark: set version {current_version} → {new_version} #0",
+            },
+        },
+        "notes": {
+            "changelog_file": "CHANGELOG.rst",
+            "commit": True,
+            "config_file": pathlib.Path.cwd() / "releasenotes" / "config.yaml",
+            "title": "CHANGELOG",
+        },
+        "version": {
+            "args": ["--no-commit", "--no-tag", "--list"],
+            "commit": True,
+            "config_file": pathlib.Path.cwd() / ".bumpversion.cfg",
+            "default_part": "patch",
+            "parts": ("major", "minor", "patch"),
+        },
+    }
+)

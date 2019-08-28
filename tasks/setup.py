@@ -6,30 +6,30 @@ from cookiecutter.main import cookiecutter
 @invoke.task
 def setup_version(ctx, force=False):
     """ Create `.bumpversion.cfg` in current directory. """
-    force = force or ctx.get("force", False)
-    config_file = ctx.version.config_file
+    force = force or ctx.config.get("force", False)
+    config_file = ctx.config.version.config_file
     if config_file.exists() and not force:
         print(f"'{config_file}' already exists, use `--force` to override")
     else:
         print(f"creating '{config_file}'")
         cookiecutter(
             "bumpversion", no_input=True, overwrite_if_exists=True,
-            output_dir=ctx.paths.cwd
+            output_dir=ctx.config.paths.cwd
         )
 
 
 @invoke.task
 def setup_notes(ctx, force=False):
     """ Create `releasenotes` tree in current directory. """
-    force = force or ctx.get("force", False)
-    config_file = ctx.notes.config_file
+    force = force or ctx.config.get("force", False)
+    config_file = ctx.config.notes.config_file
     if config_file.exists() and not force:
         print(f"'{config_file}' already exists, use `--force` to override")
     else:
         print(f"creating '{config_file}'")
         cookiecutter(
             "reno", no_input=True, overwrite_if_exists=True,
-            output_dir=ctx.paths.cwd
+            output_dir=ctx.config.paths.cwd
         )
 
 
@@ -37,7 +37,7 @@ def setup_notes(ctx, force=False):
 def setup_all(ctx, force=False):
     """ Setup version & release notes management. """
     if force:
-        ctx.force = True
+        ctx.config.force = True
 
 
 ns_setup = invoke.Collection("setup")
