@@ -26,6 +26,12 @@ COPY configs/invoke.yaml /etc/invoke.yaml
 COPY tasks /usr/local/share/invoke/tasks
 
 # setup entry point
+ENV TMPDIR=/tmp
+ENV HOME=$TMPDIR/release-tools
+ENV XDG_CONFIG_HOME=$HOME/.config
+ENV XDG_DATA_HOME=$HOME/.local
+ENV XDG_CACHE_HOME=$HOME/.cache
+ENV XDG_RUNTIME_DIR=$HOME/.run
 WORKDIR /usr/local/src
 ENTRYPOINT [ "/usr/local/bin/invoke"]
 CMD ["--list"]
