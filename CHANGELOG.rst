@@ -2,6 +2,41 @@
 CHANGELOG
 =========
 
+.. _CHANGELOG_v0.4.2:
+
+v0.4.2
+======
+
+.. _CHANGELOG_v0.4.2_Added Features:
+
+Added Features
+--------------
+
+- ✨ Added `pre-commit <https://pre-commit.com/>`_ to list of installed tools.
+
+- 🎨 Added ``--latest`` switch to ``notes.preview`` to only show unreleased release notes.
+
+
+.. _CHANGELOG_v0.4.2_Changes:
+
+Changes
+-------
+
+- 🎨 Made commiting of change log and version bump configurable.
+
+- 🎨 We now list the available task as nested list (if the container is run with no arguments).
+
+- 🎨 We now hide *stderr* output for the ``notes.…`` tasks.
+
+
+.. _CHANGELOG_v0.4.2_Updates:
+
+Updates
+-------
+
+- 📦 Updated requirements.
+
+
 .. _CHANGELOG_v0.4.1:
 
 v0.4.1
