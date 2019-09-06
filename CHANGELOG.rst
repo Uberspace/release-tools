@@ -2,6 +2,43 @@
 CHANGELOG
 =========
 
+.. _CHANGELOG_v0.5.0:
+
+v0.5.0
+======
+
+.. _CHANGELOG_v0.5.0_Added Features:
+
+Added Features
+--------------
+
+- 🔧 You can now configure multiple requirement files for the audit tasks.
+
+- ➕ Added `black <https://github.com/psf/black>`_ to the list of preinstalled tools.
+
+- ✨ Task to setup `pre-commit <https://pre-commit.com/>`_.
+
+
+.. _CHANGELOG_v0.5.0_Changes:
+
+Changes
+-------
+
+- 🚸 Echo commands for invoke tasks.
+
+- 🐳 We use ``python:3-slim`` as base image (was ``python:3``).
+
+- 📦 Replaced `pipenv <https://github.com/pypa/pipenv>`_ with `Poetry <https://github.com/sdispater/poetry>`_ (just to manage ``requirements.txt``).
+
+
+.. _CHANGELOG_v0.5.0_Updates:
+
+Updates
+-------
+
+- ⬆️ Update ``pip`` when creating the image.
+
+
 .. _CHANGELOG_v0.4.2:
 
 v0.4.2
