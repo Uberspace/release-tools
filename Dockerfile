@@ -1,4 +1,4 @@
-ARG PYTHON_VERSION=3
+ARG PYTHON_VERSION=3-slim
 FROM python:$PYTHON_VERSION
 
 # update image

@@ -1,6 +1,6 @@
 ---
 variables:
-  PYTHON_VERSION: "${PYTHON_VERSION:-3}"
+  PYTHON_VERSION: "${PYTHON_VERSION:-3-slim}"
 
 deploy-image:
   stage: deploy

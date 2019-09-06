@@ -111,8 +111,8 @@ Change `requirements.txt` to control the installed software (and versions) and
 set the `PYTHON_VERSION` environment variable, to set the Docker tag used for
 the Python base image.
 
-**NOTE** We use `3` as default tag for now (instead of `3-alpine`), because the
-_dulwich_ compilation bails on _Alpine_.
+**NOTE** We use `3-slim` as default tag for now (instead of `3-alpine`), because
+the _dulwich_ compilation bails on _Alpine_.
 
 [black]: https://github.com/psf/black
 [bumpversion]: https://github.com/c4urself/bump2version

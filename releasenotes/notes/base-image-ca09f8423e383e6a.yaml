@@ -1,0 +1,3 @@
+---
+changed:
+  - 🐳 We use ``python:3-slim`` as base image (was ``python:3``).
