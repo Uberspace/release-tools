@@ -1,0 +1,3 @@
+---
+changed:
+  - 📦 Replaced `pipenv <https://github.com/pypa/pipenv>`_ with `Poetry <https://github.com/sdispater/poetry>`_ (just to manage ``requirements.txt``).
