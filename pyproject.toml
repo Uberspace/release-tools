@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "release-tools"
-version = "0.4.2"
+version = "0.5.0"
 description = "Python Docker image with tools for the release process."
 authors = ["Janto <janto@team.uber.space>"]
 
