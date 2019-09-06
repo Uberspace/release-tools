@@ -11,7 +11,7 @@ RUN set -ex \
 # install tools
 WORKDIR /tmp
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip -r requirements.txt
 
 # setup git
 COPY configs/gitconfig /etc/gitconfig

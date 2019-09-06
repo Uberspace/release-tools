@@ -5,6 +5,7 @@
 This is a [Python Docker Image][], that comes with `git` and some other tools
 installed, that can help with release related tasks:
 
+-   [black]
 -   [bumpversion]
 -   [cookie-cutter]
 -   [invoke]
@@ -37,7 +38,7 @@ alias dkr-release="docker run --rm \
 You can use the installed tools directly, by setting them as _entry points_:
 
 ```shell
-docker run --rm --entrypoint reno uberspace/release-tools --help
+docker run --rm --entrypoint black uberspace/release-tools --help
 ```
 
 ### Tasks
@@ -113,6 +114,7 @@ the Python base image.
 **NOTE** We use `3` as default tag for now (instead of `3-alpine`), because the
 _dulwich_ compilation bails on _Alpine_.
 
+[black]: https://github.com/psf/black
 [bumpversion]: https://github.com/c4urself/bump2version
 [cookie-cutter]: https://pypi.org/project/cookiecutter/
 [docker hub]: https://hub.docker.com/r/uberspace/release-tools

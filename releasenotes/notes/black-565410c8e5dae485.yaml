@@ -1,0 +1,5 @@
+---
+added:
+  - ➕ Added `black <https://github.com/psf/black>`_ to the list of preinstalled tools.
+updated:
+  - ⬆️ Update ``pip`` when creating the image.
