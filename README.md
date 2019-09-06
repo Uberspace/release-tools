@@ -48,7 +48,7 @@ If you run this image (e.g. with the alias above), it presents you a list of
 
     release              Write CHANGELOG and BUMP version.
     audit
-        .requirements*   Print compromised packages in req-file.
+        .requirements*   Print compromised packages from `requirements.txt`.
     git
         .ignore          Print `.gitignore` for `--ids`.
         .list*           Print list of available IDs.
@@ -61,6 +61,7 @@ If you run this image (e.g. with the alias above), it presents you a list of
     setup
         .all*            Setup version & release notes management.
         .notes           Create `releasenotes` tree in current directory.
+        .pre-commit      Create `.pre-commit-config.yaml` in current directory.
         .version         Create `.bumpversion.cfg` in current directory.
     version
         .bump            Bump version based on `--part`.

@@ -5,12 +5,10 @@ import invoke
 
 @invoke.task(iterable=["file"], help={"file": "check this requirement file"})
 def requirements(ctx, file=None):
-    """ Print compromised packages from *req-file*.
+    """ Print compromised packages from `requirements.txt`.
 
-    Scans given *req_file*, or the list from `ctx.config.audit.files` -
-    Uses `requirements.txt` as default (but doesn't follow `-r …` lines).
-
-    You can use `ctx.config.audit.args` to set default arguments.
+    Scans given *file* (can be given multiple times), uses `requirements.txt` as
+    default. Doesn't follow `-r …` lines.
 
     """
     args = ctx.config.audit.args
