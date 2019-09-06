@@ -1,4 +1,3 @@
-import os
 import pathlib
 
 import invoke
@@ -88,6 +87,7 @@ ns.configure(
             "default_part": "patch",
             "parts": ("major", "minor", "patch"),
         },
+        "pre_commit": {"config_file": pathlib.Path.cwd() / ".pre-commit-config.yaml"},
         "run": {"echo": True},
     }
 )
