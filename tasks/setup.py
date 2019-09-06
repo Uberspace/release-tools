@@ -13,8 +13,10 @@ def setup_version(ctx, force=False):
     else:
         print(f"creating '{config_file}'")
         cookiecutter(
-            "bumpversion", no_input=True, overwrite_if_exists=True,
-            output_dir=ctx.config.paths.cwd
+            "bumpversion",
+            no_input=True,
+            overwrite_if_exists=True,
+            output_dir=ctx.config.paths.cwd,
         )
 
 
@@ -28,8 +30,10 @@ def setup_notes(ctx, force=False):
     else:
         print(f"creating '{config_file}'")
         cookiecutter(
-            "reno", no_input=True, overwrite_if_exists=True,
-            output_dir=ctx.config.paths.cwd
+            "reno",
+            no_input=True,
+            overwrite_if_exists=True,
+            output_dir=ctx.config.paths.cwd,
         )
 
 

@@ -11,7 +11,7 @@ def get_latest_tag(ctx, annotated=False):
     if annotated:
         return tag
     else:
-        return tag.rsplit('-', 1)[0]
+        return tag.rsplit("-", 1)[0]
 
 
 @invoke.task(help={"ids": "one or more identifiers, seperated by `,`"})

@@ -27,7 +27,10 @@ def lint(ctx):
 @invoke.task(
     iterable=["version"],
     help={
-        "version": "limit output to this version (can be given multiple times)", "title": "header for the notes", "latest": "show latest version"},
+        "version": "limit output to this version (can be given multiple times)",
+        "title": "header for the notes",
+        "latest": "show latest version",
+    },
 )
 def preview(ctx, title=None, version=None, latest=False):
     """ Print preview of change log. """

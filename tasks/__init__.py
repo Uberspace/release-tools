@@ -67,10 +67,7 @@ ns.add_task(release)
 ns.configure(
     {
         "paths": {"base": pathlib.Path(__file__).parent, "cwd": pathlib.Path.cwd()},
-        "audit": {
-            "req_file": "requirements.txt",
-            "args": [],
-        },
+        "audit": {"req_file": "requirements.txt", "args": []},
         "git": {
             "tag_name": "v{new_version}",
             "message": {
