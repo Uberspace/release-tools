@@ -1,0 +1,5 @@
+---
+added:
+  - 🔧 You can now configure multiple requirement files for the audit tasks.
+changed:
+  - 🚸 Echo commands for invoke tasks.

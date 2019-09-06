@@ -67,7 +67,7 @@ ns.add_task(release)
 ns.configure(
     {
         "paths": {"base": pathlib.Path(__file__).parent, "cwd": pathlib.Path.cwd()},
-        "audit": {"req_file": "requirements.txt", "args": []},
+        "audit": {"files": ["requirements.txt"], "args": ["--bare"]},
         "git": {
             "tag_name": "v{new_version}",
             "message": {
@@ -88,5 +88,6 @@ ns.configure(
             "default_part": "patch",
             "parts": ("major", "minor", "patch"),
         },
+        "run": {"echo": True},
     }
 )
