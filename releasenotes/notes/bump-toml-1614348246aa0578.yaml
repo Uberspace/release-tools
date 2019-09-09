@@ -3,3 +3,5 @@ added:
   - 🔧 Add ``pyproject.toml`` section to default *bumpversion* configuration.
   - 🔧 Add *Prettier* to default *pre-commit* configuration.
   - 🔧 Add *pre-commit-multi* to default *pre-commit* configuration.
+fixed:
+  - ➕ Added *curl* back to image (it got droped by switching to ``python:3-slim``).
