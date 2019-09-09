@@ -1,0 +1,7 @@
+black
+bump2version
+cookiecutter
+invoke
+pre-commit
+reno
+safety
