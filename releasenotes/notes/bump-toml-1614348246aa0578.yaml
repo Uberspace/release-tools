@@ -1,3 +1,5 @@
 ---
 added:
   - 🔧 Add ``pyproject.toml`` section to default *bumpversion* configuration.
+  - 🔧 Add *Prettier* to default *pre-commit* configuration.
+  - 🔧 Add *pre-commit-multi* to default *pre-commit* configuration.

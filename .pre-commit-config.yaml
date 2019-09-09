@@ -35,3 +35,8 @@ repos:
     rev: stable
     hooks:
       - id: black
+  # Sweet formating with Prettier (HTML, JS, CSS, Markdown…)
+  - repo: https://github.com/prettier/prettier
+    rev: master
+    hooks:
+      - id: prettier
