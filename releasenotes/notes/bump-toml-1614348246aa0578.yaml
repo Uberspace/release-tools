@@ -1,0 +1,3 @@
+---
+added:
+  - 🔧 Add ``pyproject.toml`` section to default *bumpversion* configuration.
