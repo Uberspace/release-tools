@@ -2,6 +2,39 @@
 CHANGELOG
 =========
 
+.. _CHANGELOG_v0.5.1:
+
+v0.5.1
+======
+
+.. _CHANGELOG_v0.5.1_Added Features:
+
+Added Features
+--------------
+
+- 🔧 Add ``pyproject.toml`` section to default *bumpversion* configuration.
+
+- 🔧 Add *Prettier* to default *pre-commit* configuration.
+
+- 🔧 Add *pre-commit-multi* to default *pre-commit* configuration.
+
+
+.. _CHANGELOG_v0.5.1_Changes:
+
+Changes
+-------
+
+- 📦 Dumped `Poetry <https://github.com/sdispater/poetry>`_ for `pip-tools <https://github.com/jazzband/pip-tools>`_.
+
+
+.. _CHANGELOG_v0.5.1_Fixes:
+
+Fixes
+-----
+
+- ➕ Added *curl* back to image (it got droped by switching to ``python:3-slim``).
+
+
 .. _CHANGELOG_v0.5.0:
 
 v0.5.0
