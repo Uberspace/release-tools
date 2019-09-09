@@ -17,6 +17,11 @@ repos:
       # Python
       - id: debug-statements
       - id: requirements-txt-fixer
+  # Python: check requirements
+  - repo: https://github.com/peterdemin/pip-compile-multi
+    rev: master
+    hooks:
+      - id: pip-compile-multi-verify
   # Python: flakes8 (syntax check with pyflakes only)
   - repo: https://gitlab.com/pycqa/flake8
     rev: master
