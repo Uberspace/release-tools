@@ -17,7 +17,6 @@ repos:
       - id: check-yaml
       # Python
       - id: debug-statements
-      - id: requirements-txt-fixer
   # Python: check requirements
   - repo: https://github.com/peterdemin/pip-compile-multi
     rev: master
