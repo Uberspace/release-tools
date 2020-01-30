@@ -2,6 +2,7 @@ black
 bump2version
 cookiecutter
 invoke
+pip-tools
 pre-commit
 reno
 safety
