@@ -59,7 +59,7 @@ def setup_pre_commit(ctx, force=False, init=True):
         ctx.run("pre-commit install --overwrite --install-hooks")
 
 
-@invoke.task(post=[setup_version, setup_notes])
+@invoke.task(post=[setup_version, setup_notes, setup_pre_commit])
 def setup_all(ctx, force=False):
     """ Setup version & release notes management. """
     if force:
