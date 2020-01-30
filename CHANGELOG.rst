@@ -2,6 +2,69 @@
 CHANGELOG
 =========
 
+.. _CHANGELOG_v0.6.0:
+
+v0.6.0
+======
+
+.. _CHANGELOG_v0.6.0_Summary:
+
+Summary
+-------
+
+A small cleanup release.
+
+.. _CHANGELOG_v0.6.0_Added Features:
+
+Added Features
+--------------
+
+- ➕ Added ``pip-tools`` to the requirements for the image.
+
+- ✨ Added ``package.update`` task, to create ``requirements.txt`` form ``requirements.in`` files.
+
+
+.. _CHANGELOG_v0.6.0_Changes:
+
+Changes
+-------
+
+- 🚚 Renamed ``audit`` task to ``package.audit``.
+
+- ✨ The ``setup.all`` task now also executes the ``setup.pre-commit`` task.
+
+- 🔧 Added ``venv`` to the default set of IDs for the ``git.ignore`` task.
+
+- 🔧 We included ``tests`` in the list of directories given to
+   ``--application-directories`` for reordering python imports.
+
+- 🐳 We try to be less noisy in our Docker builds (added ``-qq`` to *apt-get* and ``--quiet`` top *pip*).
+
+
+.. _CHANGELOG_v0.6.0_Updates:
+
+Updates
+-------
+
+- 🙈 Added basic files to ``.gitignore``.
+
+
+.. _CHANGELOG_v0.6.0_Removed:
+
+Removed
+-------
+
+- 🎨 Removed leftover ``requirements-txt-fixer`` hook from default `pre-commit <https://pre-commit.com>`_ configuration. We use ``reorder_python_imports`` instead.
+
+
+.. _CHANGELOG_v0.6.0_Fixes:
+
+Fixes
+-----
+
+- 🐳 We removed the ``apt-get upgrade`` step from our Docker builds (which also is a nice speed increase).
+
+
 .. _CHANGELOG_v0.5.1:
 
 v0.5.1
