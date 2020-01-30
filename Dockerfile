@@ -3,16 +3,18 @@ FROM python:$PYTHON_VERSION
 
 # update image
 RUN set -ex \
-    && apt-get update \
-    && apt-get upgrade --yes \
-    && apt-get install --yes --no-install-recommends \
+    && apt-get -qq update \
+    && apt-get -qq install --yes --no-install-recommends \
         curl \
-        git
+        git \
+    && rm -rf /var/lib/apt/lists/*
 
 # install tools
 WORKDIR /tmp
 COPY requirements.txt ./
-RUN pip install --no-cache-dir --upgrade pip -r requirements.txt
+RUN set -ex \
+    && pip install --quiet --isolated --no-cache-dir --upgrade pip \
+    && pip install --quiet --isolated --no-cache-dir -r requirements.txt
 
 # setup git
 COPY configs/gitconfig /etc/gitconfig
