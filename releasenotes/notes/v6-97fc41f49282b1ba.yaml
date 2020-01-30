@@ -1,0 +1,28 @@
+summary: >-
+  A small cleanup release.
+added:
+  - >-
+    ➕ Added ``pip-tools`` to the requirements for the image.
+  - >-
+    ✨ Added ``package.update`` task, to create ``requirements.txt`` form
+    ``requirements.in`` files.
+changed:
+  - >-
+    🚚 Renamed ``audit`` task to ``package.audit``.
+  - >-
+    ✨ The ``setup.all`` task now also executes the ``setup.pre-commit`` task.
+  - >-
+    🔧 Added ``venv`` to the default set of IDs for the ``git.ignore`` task.
+  - >-
+    🔧 We included ``tests`` in the list of directories given to
+     ``--application-directories`` for reordering python imports.
+  - >-
+    🐳 We try to be less noisy in our Docker builds (added ``-qq`` to *apt-get*
+    and ``--quiet`` top *pip*).
+updated:
+  - >-
+    🙈 Added basic files to ``.gitignore``.
+fixed:
+  - >-
+    🐳 We removed the ``apt-get upgrade`` step from our Docker builds (which
+    also is a nice speed increase).
