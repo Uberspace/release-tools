@@ -2,14 +2,14 @@ import pathlib
 
 import invoke
 
-from . import audit
 from . import git
 from . import notes
+from . import package
 from . import setup
 from . import version
 
 
-@invoke.task(help={"part": "version part to bump ('major', 'minor' or 'patch')"})
+@invoke.task(help={"part": "version part to bump (e.g. 'major', 'minor' or 'patch')"})
 def release(ctx, part=None, commit=None):
     """ Write CHANGELOG and BUMP version. """
     if commit is None:
@@ -55,18 +55,35 @@ def release(ctx, part=None, commit=None):
 
 ns = invoke.Collection()
 
-ns.add_collection(audit.ns_audit)
 ns.add_collection(git.ns_git)
 ns.add_collection(notes.ns_notes)
+ns.add_collection(package.ns_package)
 ns.add_collection(setup.ns_setup)
 ns.add_collection(version.ns_version)
 
 ns.add_task(release)
 
+# fmt: off
 ns.configure(
     {
-        "paths": {"base": pathlib.Path(__file__).parent, "cwd": pathlib.Path.cwd()},
-        "audit": {"files": ["requirements.txt"], "args": ["--bare"]},
+        "paths": {
+            "base": pathlib.Path(__file__).parent,
+            "cwd": pathlib.Path.cwd(),
+        },
+        "package": {
+            "files": {
+                "src": [
+                    "requirements.in",
+                ],
+                "dst": [
+                    "requirements.txt",
+                ],
+            },
+            "args": {
+                "audit": ["--bare"],
+                "update": ["--annotate", "--generate-hashes"],
+            },
+        },
         "git": {
             "tag_name": "v{new_version}",
             "message": {
@@ -87,7 +104,10 @@ ns.configure(
             "default_part": "patch",
             "parts": ("major", "minor", "patch"),
         },
-        "pre_commit": {"config_file": pathlib.Path.cwd() / ".pre-commit-config.yaml"},
+        "pre_commit": {
+            "config_file": pathlib.Path.cwd() / ".pre-commit-config.yaml"
+        },
         "run": {"echo": True},
     }
 )
+# fmt: on
