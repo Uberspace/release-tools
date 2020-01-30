@@ -15,7 +15,7 @@ def get_latest_tag(ctx, annotated=False):
 
 
 @invoke.task(help={"ids": "one or more identifiers, seperated by `,`"})
-def ignore(ctx, ids="python,visualstudiocode"):
+def ignore(ctx, ids="python,venv,visualstudiocode"):
     """ Print `.gitignore` for `--ids`. """
     cmd = f"git ignore '{ids}'"
     ctx.run(cmd)
